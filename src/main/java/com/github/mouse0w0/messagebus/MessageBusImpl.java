@@ -16,6 +16,10 @@ public class MessageBusImpl implements MessageBus {
 
     protected MessageBusExceptionHandler exceptionHandler;
 
+    public MessageBusImpl() {
+        this(null);
+    }
+
     public MessageBusImpl(MessageBusImpl parent) {
         this.parent = parent;
         if (parent != null) {

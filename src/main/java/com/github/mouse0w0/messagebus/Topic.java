@@ -20,6 +20,10 @@ public final class Topic<T> {
         this(name, subscriberClass, BroadcastDirection.TO_CHILDREN);
     }
 
+    public Topic(Class<T> subscriberClass, BroadcastDirection broadcastDirection) {
+        this(subscriberClass.getSimpleName(), subscriberClass, broadcastDirection);
+    }
+
     public Topic(String name, Class<T> subscriberClass, BroadcastDirection broadcastDirection) {
         this.name = name;
         this.subscriberClass = subscriberClass;
